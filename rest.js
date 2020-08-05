@@ -17,11 +17,10 @@ let products = [
 ];
 
 const idGenerator = ()=>{
-    let idOfProduct = Math.floor(Math.random() * (1000000 - 100000 + 1) ) + 100000;
-    product.id = idOfProduct;
+    let idOfProduct = Math.floor(Math.random() * (1000000 - 100000 + 1)  + 100000);
     products.map(obj=>{
         if(obj.id===idOfProduct){
-            idOfProduct = idGenerator(products);
+            idOfProduct = idGenerator();
         }
     });
     return idOfProduct;
