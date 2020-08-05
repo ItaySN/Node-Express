@@ -6,17 +6,18 @@ app.use(express.json());
 let products = [
     {
         name: 'milk',
+        price: "10",
         id: "8382747"
     },
     {
         name: "bread",
+        price: "20",
         id: "635272"
     }
 ];
 
 const idGenerator = ()=>{
     let idOfProduct = Math.floor(Math.random() * (1000000 - 100000 + 1) ) + 100000;
-    product.id = idOfProduct;
     products.map(obj=>{
         if(obj.id===idOfProduct){
             idOfProduct = idGenerator(products);
