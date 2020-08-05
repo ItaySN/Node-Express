@@ -5,14 +5,12 @@ app.use(express.json());
 
 let products = [
     {
-        id:'Iphone',
-        author: 'Itay',
-        content: 'Very good post'
+        name: 'milk',
+        id: "8382747"
     },
     {
-        id:'Galaxy',
-        author: 'Ofir Simhi',
-        content: 'Very bad post'
+        name: "bread",
+        id: "635272"
     }
 ];
 
@@ -24,7 +22,7 @@ const idGenerator = ()=>{
             idOfProduct = idGenerator(products);
         }
     });
-    return idOfProduct;
+    return idOfProduct.toString();
 }
 
 

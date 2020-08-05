@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1>My Shopping List</h1>
+    <div id='newItemDiv'>
+        <label for='newItemInput' id='newItemLabel'>Add new item: </label>
+        <input type='text' id='newItemInput' placeholder="New Item">
+        <button for='newItemInput' id='newItemButton'>Add</button>
+        <button id='undo'>Undo</button>
+    </div>
+
+    <!--List-->
+    <fieldset id='ListField'>
+        <legend>Shpping List</legend>
+        <ul id='shoppingList'>
+        </ul>
+    </fieldset>
+
+    <script src='home.js'></script>
+</body>
+</html>
