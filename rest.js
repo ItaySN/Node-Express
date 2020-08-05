@@ -16,9 +16,21 @@ let products = [
     }
 ];
 
+const idGenerator = ()=>{
+    let idOfProduct = Math.floor(Math.random() * (1000000 - 100000 + 1) ) + 100000;
+    product.id = idOfProduct;
+    products.map(obj=>{
+        if(obj.id===idOfProduct){
+            idOfProduct = idGenerator(products);
+        }
+    });
+    return idOfProduct;
+}
+
+
 
 app.post('/product', (req, res) =>{
-    console.log(req.body);
+    req.body.id = idGenerator();
     products.push(req.body);
     res.send(req.body);
     
@@ -48,7 +60,7 @@ app.put('/product/:id', (req, res) =>{
 app.get('/product/:id', (req, res) =>{
     for(let product of products){
         if(product.id === req.params.id){
-            res.send(post);
+            res.send(product);
         }
     }
 });
