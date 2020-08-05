@@ -16,6 +16,7 @@ let products = [
     }
 ];
 
+//Create a specify ID to the product
 const idGenerator = ()=>{
     let idOfProduct = Math.floor(Math.random() * (1000000 - 100000 + 1)  + 100000);
     products.map(obj=>{
@@ -23,11 +24,11 @@ const idGenerator = ()=>{
             idOfProduct = idGenerator();
         }
     });
-    return idOfProduct;
+    return idOfProduct.toString();
 }
 
 
-
+//Add a new product to the products list 
 app.post('/product', (req, res) =>{
     req.body.id = idGenerator();
     products.push(req.body);
@@ -35,7 +36,7 @@ app.post('/product', (req, res) =>{
     
 });
 
-
+//Delete a specify product by ID
 app.delete('/product/:id', (req, res) =>{
     products.forEach((product, index) =>{
         if(product.id === req.params.id){
@@ -55,7 +56,7 @@ app.put('/product/:id', (req, res) =>{
     });
 });
 
-
+//Get a specify product by ID
 app.get('/product/:id', (req, res) =>{
     for(let product of products){
         if(product.id === req.params.id){
@@ -64,9 +65,11 @@ app.get('/product/:id', (req, res) =>{
     }
 });
 
+//Get all the products list
 app.get('/products', (req, res) => {
     res.send(products);
 });
+
 
 app.get('/', (req, res) => {
     res.send('Shopping List ');
