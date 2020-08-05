@@ -1,0 +1,23 @@
+{
+  "name": "Node-Express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ItaySN/Node-Express.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ItaySN/Node-Express/issues"
+  },
+  "homepage": "https://github.com/ItaySN/Node-Express#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
