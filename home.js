@@ -64,6 +64,7 @@ function addItem(node, isNew, id){
     let List = document.querySelector('#shoppingList');
     let itemInput = document.querySelector('#newItemInput');
     let itemPrice = document.querySelector('#newPriceInput');
+    
     let name = node.querySelector('.itemName').innerText;
     let price = node.querySelector('.itemPrice').innerText;
 
