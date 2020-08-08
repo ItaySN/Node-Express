@@ -31,6 +31,7 @@ function delItem(event){
             delItem.remove();
         }
         item.remove();
+        console.log('the item has been deleted');
     }
     xhl.open('DELETE', `http://localhost:3001/product/${item.id}`);
     xhl.send();
