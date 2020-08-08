@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <h1 id='title'>My Shopping List</h1>
+    <section id="display">
+      <div id="newItemDiv">
+        <div>
+          <label for="newItemInput" id="newItemLabel">Item Name: </label>
+          <input type="text" id="newItemInput" placeholder="New Item" />
+        </div>
+        <div>
+          <label for="newPriceInput" id="newPriceLabel">Quantity: </label>
+          <input type="text" id="newPriceInput" placeholder="Quantity" />
+        </div>
+        <div>
+          <button for="newItemInput" id="newItemButton">Add</button>
+          <button id="undo">Undo</button>
+        </div>
+    </div>
+
+      <!--List-->
+      <fieldset id="ListField">
+        <legend>Shopping List</legend>
+        <ul id="shoppingList"></ul>
+      </fieldset>
+    </section>
+
+    <script src="home.js"></script>
+  </body>
+</html>
