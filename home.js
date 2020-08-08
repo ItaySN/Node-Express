@@ -1,6 +1,5 @@
 
-
-function loadList(List){
+function loadList(){
     fetch('http://localhost:3001/products')
     .then(res => res.json())
     .then(data => {
@@ -10,6 +9,7 @@ function loadList(List){
     })
     .catch(e => console.log(e.message));
 }
+
 
 
 function delItem(event){
@@ -26,10 +26,6 @@ function delItem(event){
             price : item.querySelector('.itemPrice').innerText
         }
         deletedItems.unshift(itemDetails);
-        if(deletedItems.length > 5){
-            let delItem = deletedItems.pop();
-            delItem.remove();
-        }
         item.remove();
         console.log('the item has been deleted');
     }
@@ -37,6 +33,8 @@ function delItem(event){
     xhl.send();
 
 }
+
+
 
  function createItem(newItem){
     let newLi  = document.createElement('li');
@@ -64,13 +62,13 @@ function delItem(event){
 
 function addItem(node, isNew, id){
     let List = document.querySelector('#shoppingList');
-    let nodeName = node.querySelector('.itemName').innerText;
-    let nodePrice = node.querySelector('.itemPrice').innerText;
     let itemInput = document.querySelector('#newItemInput');
     let itemPrice = document.querySelector('#newPriceInput');
+    let name = node.querySelector('.itemName').innerText;
+    let price = node.querySelector('.itemPrice').innerText;
 
     if(isNew) {
-        axios.post('http://localhost:3001/product', {name: nodeName, price: nodePrice})
+        axios.post('http://localhost:3001/product', {name: name, price: price})
         .then(res => {
             node.id = res.data.id;
         })
@@ -102,12 +100,6 @@ item.addEventListener('keyup', () => {
     }
 });
 
-
-const List = document.querySelector('#shoppingList');
-
-loadList(List);
-
-
 let deletedItems =[];
 let undoButton = document.querySelector('#undo');
 undoButton.addEventListener('click', function(){
@@ -117,3 +109,8 @@ undoButton.addEventListener('click', function(){
     
     addItem(createItem(deletedItems.shift()), true);
 });
+
+
+const List = document.querySelector('#shoppingList');
+
+loadList();
